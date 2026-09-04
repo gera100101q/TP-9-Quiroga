@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inicio | Mundial de Fútbol</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="encabezado-sitio">
+    <div class="contenedor">
+      <span class="pretitulo">Mundial 2026 — Panel general</span>
+      <h1>Sistema de Gestión de Resultados del Mundial</h1>
+      <p>Seguí el próximo encuentro, los partidos jugados y la tabla de posiciones actualizada del torneo.</p>
+    </div>
+  </header>
+
+  <nav class="nav-principal">
+    <div class="contenedor">
+      <ul>
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="partidos.html">Partidos</a></li>
+        <li><a href="posiciones.html">Posiciones</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="contenedor">
+
+      <section id="proximo-partido">
+        <div class="encabezado-seccion">
+          <span class="pretitulo">Próximo encuentro</span>
+          <h2>Argentina vs. Francia</h2>
+        </div>
+
+        <div class="lista-articulos">
+          <article>
+            <span class="numero-pieza">Encuentro destacado</span>
+            <h3>Fase de grupos — Grupo C</h3>
+            <span class="meta">10/07/2026 · 16:00 hs · Estadio MetLife, Estados Unidos</span>
+            <p>Un cruce clave para definir la clasificación a octavos de final. Al ingresar a esta página se muestra un mensaje de bienvenida con los datos del encuentro.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="resumen">
+        <div class="encabezado-seccion">
+          <span class="pretitulo">Resumen</span>
+          <h2>El torneo hasta ahora</h2>
+        </div>
+
+        <div class="lista-articulos">
+          <article>
+            <span class="numero-pieza">Dato 001</span>
+            <h3>48 partidos jugados</h3>
+            <p>El sistema lleva un registro dinámico de la cantidad de encuentros disputados en lo que va del Mundial.</p>
+          </article>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="pie-sitio">
+    <div class="contenedor">
+      <p>Sistema de Gestión de Resultados del Mundial — Laboratorio de Programación, 6° G</p>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="partidos.html">Partidos</a></li>
+          <li><a href="posiciones.html">Posiciones</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Vinculación externa del script -->
+  <script src="js/script.js"></script>
+
+  <!-- Script interno: llama a la función externa al cargar la página -->
+  <script>
+    window.onload = function () {
+      mostrarBienvenida();
+    };
+  </script>
+
+</body>
+</html>

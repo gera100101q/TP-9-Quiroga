@@ -1,0 +1,484 @@
+/* =========================================================
+   Sistema de Gestión de Fixtures
+   Estética: minimalista / galería de arte
+   Fondos neutros, tipografía fina, mucho espacio en blanco.
+   Hoja compartida por index.html, alta-fixture.html y ver-fixture.html
+   ========================================================= */
+
+:root {
+  --papel: #f6f5f1;
+  --panel: #efede6;
+  --tinta: #1b1a18;
+  --tinta-suave: #6f6c65;
+  --linea: #d9d6cc;
+  --acento: #6e2a35;
+  --acento-suave: #8b4a54;
+  --ancho-contenido: 880px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--papel);
+  color: var(--tinta);
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  color: var(--tinta);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 400; }
+h2 { font-size: clamp(1.5rem, 3vw, 1.9rem); font-weight: 500; }
+h3 { font-size: 1.2rem; font-weight: 600; }
+
+p {
+  color: var(--tinta-suave);
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--tinta);
+  text-decoration: none;
+}
+
+.contenedor {
+  max-width: var(--ancho-contenido);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ---------------------------------------------------------
+   Encabezado / Header
+   --------------------------------------------------------- */
+
+.encabezado-sitio {
+  padding: 56px 0 28px;
+  border-bottom: 1px solid var(--linea);
+}
+
+.pretitulo {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--acento);
+  margin-bottom: 14px;
+}
+
+.encabezado-sitio p {
+  margin-top: 14px;
+  max-width: 56ch;
+}
+
+/* ---------------------------------------------------------
+   Navegación — idéntica en las tres páginas
+   --------------------------------------------------------- */
+
+.nav-principal {
+  background-color: var(--papel);
+}
+
+.nav-principal ul {
+  list-style: none;
+  display: flex;
+  gap: 34px;
+  margin: 0;
+  padding: 18px 0;
+  flex-wrap: wrap;
+}
+
+.nav-principal a {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav-principal a:hover {
+  color: var(--tinta);
+}
+
+.nav-principal a[aria-current="page"] {
+  color: var(--acento);
+  border-bottom-color: var(--acento);
+}
+
+/* ---------------------------------------------------------
+   Main / Secciones
+   --------------------------------------------------------- */
+
+main {
+  padding: 56px 0 72px;
+}
+
+section + section {
+  margin-top: 64px;
+  padding-top: 56px;
+  border-top: 1px solid var(--linea);
+}
+
+.encabezado-seccion {
+  margin-bottom: 34px;
+}
+
+.encabezado-seccion .pretitulo {
+  margin-bottom: 8px;
+}
+
+/* Artículos (novedades, avisos, obras del "dashboard") */
+
+.lista-articulos {
+  display: flex;
+  flex-direction: column;
+}
+
+article {
+  padding: 28px 0;
+  border-top: 1px solid var(--linea);
+}
+
+article:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.numero-pieza {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--tinta-suave);
+  margin-bottom: 10px;
+}
+
+article h3 {
+  margin-bottom: 8px;
+}
+
+article .meta {
+  font-size: 0.8rem;
+  color: var(--acento-suave);
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* ---------------------------------------------------------
+   Formulario (alta-fixture.html)
+   --------------------------------------------------------- */
+
+.formulario-fixture {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.grupo-campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 28px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo.campo-ancho {
+  grid-column: 1 / -1;
+}
+
+label,
+.etiqueta-grupo {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+select {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--tinta);
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--linea);
+  border-radius: 0;
+  padding: 10px 2px;
+  transition: border-color 0.15s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+select:focus {
+  outline: none;
+  border-bottom-color: var(--acento);
+}
+
+select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--tinta-suave) 50%),
+    linear-gradient(135deg, var(--tinta-suave) 50%, transparent 50%);
+  background-position: calc(100% - 6px) center, calc(100% - 1px) center;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  padding-right: 20px;
+}
+
+.opciones-radio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+}
+
+.opcion-radio {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.9rem;
+  color: var(--tinta);
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.opcion-radio input[type="radio"] {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--acento);
+  cursor: pointer;
+}
+
+.acciones-formulario {
+  display: flex;
+  gap: 18px;
+  padding-top: 8px;
+}
+
+.boton {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 14px 30px;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.boton-principal {
+  background-color: var(--tinta);
+  color: var(--papel);
+  border: 1px solid var(--tinta);
+}
+
+.boton-principal:hover {
+  background-color: var(--acento);
+  border-color: var(--acento);
+}
+
+.boton-secundario {
+  background-color: transparent;
+  color: var(--tinta-suave);
+  border: 1px solid var(--linea);
+}
+
+.boton-secundario:hover {
+  border-color: var(--tinta-suave);
+  color: var(--tinta);
+}
+
+/* ---------------------------------------------------------
+   Visualizador de fixture (tabla + aside)
+   --------------------------------------------------------- */
+
+.layout-visualizador {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+table.tabla-fixture {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-fixture caption {
+  text-align: left;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  margin-bottom: 18px;
+}
+
+.tabla-fixture th,
+.tabla-fixture td {
+  text-align: left;
+  padding: 16px 12px;
+  border-bottom: 1px solid var(--linea);
+  font-weight: 300;
+}
+
+.tabla-fixture th {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  font-weight: 500;
+  border-bottom: 1px solid var(--tinta);
+}
+
+.tabla-fixture td:first-child,
+.tabla-fixture th:first-child {
+  padding-left: 0;
+}
+
+.instancia-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--acento);
+}
+
+aside {
+  border-left: 1px solid var(--linea);
+  padding-left: 32px;
+}
+
+aside h2 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+aside .bloque-aside {
+  margin-bottom: 36px;
+}
+
+aside .bloque-aside:last-child {
+  margin-bottom: 0;
+}
+
+aside h3 {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  margin-bottom: 12px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+}
+
+aside ol,
+aside ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--tinta-suave);
+  font-size: 0.9rem;
+}
+
+aside li {
+  margin-bottom: 6px;
+}
+
+/* ---------------------------------------------------------
+   Pie de página — idéntico en las tres páginas
+   --------------------------------------------------------- */
+
+.pie-sitio {
+  border-top: 1px solid var(--linea);
+  padding: 32px 0 48px;
+}
+
+.pie-sitio .contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pie-sitio p {
+  margin: 0;
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  color: var(--tinta-suave);
+}
+
+.pie-sitio nav ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.pie-sitio nav a {
+  font-size: 0.76rem;
+  color: var(--tinta-suave);
+  letter-spacing: 0.04em;
+}
+
+.pie-sitio nav a:hover {
+  color: var(--acento);
+}
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 760px) {
+  .grupo-campos {
+    grid-template-columns: 1fr;
+  }
+
+  .layout-visualizador {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    border-left: none;
+    border-top: 1px solid var(--linea);
+    padding-left: 0;
+    padding-top: 32px;
+  }
+
+  .nav-principal ul {
+    gap: 20px;
+  }
+
+  .acciones-formulario {
+    flex-direction: column;
+  }
+
+  .boton {
+    width: 100%;
+    text-align: center;
+  }
+}

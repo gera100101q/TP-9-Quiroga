@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partidos | Mundial de Fútbol</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="encabezado-sitio">
+    <div class="contenedor">
+      <span class="pretitulo">Mundial 2026 — Resultados</span>
+      <h1>Partidos jugados</h1>
+      <p>Consultá el detalle de los encuentros disputados y el resultado del último partido cargado.</p>
+    </div>
+  </header>
+
+  <nav class="nav-principal">
+    <div class="contenedor">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="partidos.html" aria-current="page">Partidos</a></li>
+        <li><a href="posiciones.html">Posiciones</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="contenedor">
+
+      <section id="tabla-partidos">
+        <div class="encabezado-seccion">
+          <span class="pretitulo">Agenda</span>
+          <h2>Resultados de la fase de grupos</h2>
+        </div>
+
+        <table class="tabla-fixture">
+          <caption>Encuentros disputados — Mundial 2026</caption>
+          <thead>
+            <tr>
+              <th scope="col">Fecha</th>
+              <th scope="col">Encuentro</th>
+              <th scope="col">Resultado</th>
+              <th scope="col">Grupo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>03/07/2026</td>
+              <td>Argentina vs. Francia</td>
+              <td>3 - 1</td>
+              <td><span class="instancia-tag">Grupo C</span></td>
+            </tr>
+            <tr>
+              <td>04/07/2026</td>
+              <td>Brasil vs. España</td>
+              <td>1 - 1</td>
+              <td><span class="instancia-tag">Grupo D</span></td>
+            </tr>
+            <tr>
+              <td>05/07/2026</td>
+              <td>Alemania vs. Japón</td>
+              <td>0 - 2</td>
+              <td><span class="instancia-tag">Grupo E</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="evaluacion">
+        <div class="encabezado-seccion">
+          <span class="pretitulo">Validación</span>
+          <h2>Resultado del último partido cargado</h2>
+        </div>
+
+        <div class="lista-articulos">
+          <article>
+            <span class="numero-pieza">Encuentro evaluado</span>
+            <h3>Argentina vs. Francia — 3 a 1</h3>
+            <p>Al presionar el botón, el script compara el resultado cargado en las variables <code>golesLocal</code> y <code>golesVisitante</code> y muestra un mensaje distinto según el equipo ganador, mediante una lógica <code>if / else</code>.</p>
+            <button type="button" class="boton boton-principal" onclick="evaluarResultado()">Ver resultado del partido</button>
+          </article>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="pie-sitio">
+    <div class="contenedor">
+      <p>Sistema de Gestión de Resultados del Mundial — Laboratorio de Programación, 6° G</p>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="partidos.html">Partidos</a></li>
+          <li><a href="posiciones.html">Posiciones</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
